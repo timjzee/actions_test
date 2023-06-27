@@ -12,6 +12,7 @@ The `/site` folder contains all files for the website.
 - `styles.css`​ is a placeholder for css code that is applied to index.html
 
 The following html classes are available for css:
+
 `<th>`:
 - main-header
 - second-header
