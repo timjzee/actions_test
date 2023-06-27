@@ -4,7 +4,7 @@ Test repo for GitHub Actions. Pull request should be made by adding/removing/adj
 
 If a pull request is merged 2 consecutive workflows are activated:
 - `.github/workflows/update-table.yml` merges `csv` files into `table.html` which is pushed to /site
-- `.github/workflows/static.yml` builds and deploys the GitHub pages website, available at <timzee.nl/actions_test>
+- `.github/workflows/static.yml` builds and deploys the GitHub pages website, available at <http://www.timzee.nl/actions_test>
 
 The `/site` folder contains all files for the website.
 - `index.html` can be adjusted with text/info/links​. Do not remove the code that includes the table. 
