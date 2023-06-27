@@ -34,11 +34,11 @@ jobs:
       - name: Trigger Deployment
         uses: actions/github-script@v6
         with:
-          script: |
-            const response = await github.rest.actions.createWorkflowDispatch({
+          script:  |
+            github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              workflow_id: 'static.yml'
-            });
-            console.log(response);
+              workflow_id: 'static.yml',
+              ref: 'main',
+            })
 
