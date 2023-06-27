@@ -4,8 +4,7 @@ import glob
 path = r'./projects' 
 all_files = glob.glob(path + "/*.csv")
 
-html_table = '<!DOCTYPE html>\n<html>\n<head>\n<style>\ntable, th, td {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\n</style>\n</head>\n<body>\n'
-html_table += '<table>\n'
+html_table = '<table>\n'
 html_table += '<thead>\n'
 html_table += '<tr><th>Project</th><th colspan="6">Availability</th></tr>\n'
 html_table += '<tr><th>(maker, bases, URL)</th><th>Open code</th><th>LLM data</th><th>LLM weights</th><th>RLHF data</th><th>RLHF weights</th><th>License</th></tr>\n'
@@ -44,7 +43,7 @@ for i, fname in enumerate(all_files):
         html_table += r2_html
 
 html_table += '</tbody>\n'
-html_table += '</table>\n</body>\n</html>'
+html_table += '</table>\n'
 
-with open("./site/index.html", 'w') as file:
+with open("./site/table.html", 'w') as file:
     file.write(html_table)
