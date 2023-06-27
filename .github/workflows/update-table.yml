@@ -23,3 +23,21 @@ jobs:
       # commit changed html files
       - name: Commit
         uses: stefanzweifel/git-auto-commit-action@v4
+    
+  # Trigger deployment workflow on completion of the build workflow
+  deploy:
+    needs: create-table
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Deployment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const response = await octokit.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'static.yml'
+            });
+            console.log(response);
+
