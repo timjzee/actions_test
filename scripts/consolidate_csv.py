@@ -1,7 +1,7 @@
 import csv
 import glob
 #the path of the csv files to combine
-path = r'../projects' 
+path = r'./projects' 
 all_files = glob.glob(path + "/*.csv")
 
 html_table = '<!DOCTYPE html>\n<html>\n<head>\n<style>\ntable, th, td {\n  border: 1px solid black;\n  border-collapse: collapse;\n}\n</style>\n</head>\n<body>\n'
@@ -46,5 +46,5 @@ for i, fname in enumerate(all_files):
 html_table += '</tbody>\n'
 html_table += '</table>\n</body>\n</html>'
 
-with open("../site/index.html", 'w') as file:
+with open("./site/index.html", 'w') as file:
     file.write(html_table)
