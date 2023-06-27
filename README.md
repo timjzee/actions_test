@@ -24,3 +24,5 @@ The following html classes are available for css:
   - data-cell
     - open, partial, closed
 - row-b
+
+See `/scripts/consolidate_csv.py` for details.
